@@ -4,6 +4,7 @@ import { warn } from '@ember/debug';
 import Component from '@ember/component';
 import { isArray, A } from '@ember/array';
 import { computed, observer } from '@ember/object';
+import $ from 'jquery';
 
 const isSelectedOption = (option) => option.$().is(':selected');
 
@@ -217,16 +218,16 @@ export default Component.extend({
   didInsertElement() {
     this._super.apply(this, arguments);
 
-    this.$().on('blur', (event) => {
+    $(this.element).on('blur', (event) => {
       this.blur(event);
     });
 
     // FIXME this is an unfortunate workaround for an Edge bug for selects with required:
     // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8794503/
     if (/edge\//i.test(window.navigator.userAgent)) {
-      let value = this.$().val();
-      this.$().val(`${value}-fake-edge-😳`);
-      this.$().val(value);
+      let value = $(this.element).val();
+      $(this.element).val(`${value}-fake-edge-😳`);
+      $(this.element).val(value);
     }
   },
 
@@ -234,7 +235,7 @@ export default Component.extend({
    * @override
    */
   willDestroyElement: function() {
-    this.$().off('blur');
+    $(this.element).off('blur');
     this._super.apply(this, arguments);
   },
 
