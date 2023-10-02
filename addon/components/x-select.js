@@ -6,7 +6,7 @@ import { isArray, A } from '@ember/array';
 import { computed, observer } from '@ember/object';
 import $ from 'jquery';
 
-const isSelectedOption = (option) => option.$().is(':selected');
+const isSelectedOption = (option) => $(option.element).is(':selected');
 
 /**
  * Wraps a native <select> element so that it can be object and
