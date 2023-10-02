@@ -131,7 +131,7 @@ export default Component.extend({
   change(event) {
     let nextValue = this._getValue();
 
-    this.sendAction('action', nextValue, event, this);
+    this.action(nextValue, event, this);
     this._handleAction('on-change', nextValue, event);
   },
 
@@ -208,7 +208,7 @@ export default Component.extend({
   __setDefaultValues: function() {
     let canSet = !this.isDestroying && !this.isDestroyed;
     if (canSet && this.get('value') == null) {
-      this.sendAction('action', this._getValue());
+      this.action(this._getValue());
     }
   },
 
