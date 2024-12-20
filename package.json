@@ -1,6 +1,6 @@
 {
   "name": "emberx-select",
-  "version": "3.1.1",
+  "version": "3.1.8",
   "description": "A Select component based on html select.",
   "keywords": [
     "ember-addon",
@@ -16,14 +16,14 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/thefrontside/emberx-select",
+  "repository": "https://github.com/jukeboxhero/emberx-select",
   "scripts": {
     "build": "ember build",
     "start": "ember serve",
     "test": "ember try:each"
   },
   "dependencies": {
-    "ember-cli-babel": "^6.6.0",
+    "ember-cli-babel": "^7.26.6",
     "ember-cli-htmlbars": "^2.0.1"
   },
   "devDependencies": {
@@ -54,7 +54,7 @@
     "markdown-code-highlighting": "0.1.0"
   },
   "engines": {
-    "node": "^4.5 || 6.* || >= 7.*"
+    "node": ">= 7"
   },
   "ember-addon": {
     "demoURL": "http://emberx-select.pagefrontapp.com",
