@@ -1,6 +1,6 @@
 {
   "name": "emberx-select",
-  "version": "3.1.9",
+  "version": "3.1.10",
   "description": "A Select component based on html select.",
   "keywords": [
     "ember-addon",
@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "ember-cli-babel": "^7.26.6",
-    "ember-cli-htmlbars": "^2.0.1"
+    "ember-cli-htmlbars": "^6.0.2"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
