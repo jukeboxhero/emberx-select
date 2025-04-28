@@ -1,5 +1,6 @@
 /*global expect */
 import { beforeEach, describe, it } from 'mocha';
+import jQuery from 'jquery';
 
 export function shouldBindAttrs() {
   describe('native select element attributes', function() {
@@ -15,25 +16,25 @@ export function shouldBindAttrs() {
     });
 
     it('renders the name attribute', function() {
-      expect(this.$().attr('name')).to.equal('person-select');
+      expect(jQuery(this.element).attr('name')).to.equal('person-select');
     });
     it('renders the form attribute', function() {
-      expect(this.$().attr('form')).to.equal('person-form');
+      expect(jQuery(this.element).attr('form')).to.equal('person-form');
     });
     it('renders the title attribute', function() {
-      expect(this.$().attr('title')).to.equal('person title');
+      expect(jQuery(this.element).attr('title')).to.equal('person title');
     });
     it('renders the size attribute', function() {
-      expect(this.$().attr('size')).to.equal('3');
+      expect(jQuery(this.element).attr('size')).to.equal('3');
     });
     it('renders the required attribute', function() {
-      expect(this.$().attr('required')).to.equal('required');
+      expect(jQuery(this.element).attr('required')).to.equal('required');
     });
     it('renders the autofocus attribute', function() {
-      expect(this.$().attr('autofocus')).to.equal('autofocus');
+      expect(jQuery(this.element).attr('autofocus')).to.equal('autofocus');
     });
     it('renders the tabindex attribute with 0', function() {
-      expect(this.$().attr('tabindex')).to.equal('0');
+      expect(jQuery(this.element).attr('tabindex')).to.equal('0');
     });
 
     describe('setting tabindex', function() {
@@ -42,7 +43,7 @@ export function shouldBindAttrs() {
       });
 
       it('has the correct tabindex value', function() {
-        expect(this.$().attr('tabindex')).to.equal('2');
+        expect(jQuery(this.element).attr('tabindex')).to.equal('2');
       });
     });
   });

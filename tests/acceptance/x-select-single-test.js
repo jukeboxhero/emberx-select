@@ -2,7 +2,7 @@
 
 import { run } from '@ember/runloop';
 
-import $ from 'jquery';
+import jQuery from 'jquery';
 import startApp from '../helpers/start-app';
 import {
   beforeEach,
@@ -39,17 +39,17 @@ describe('XSelect: Single Selection', function() {
   });
 
   it('is enabled by default', function() {
-    expect(this.$()).not.to.be.disabled;
+    expect(jQuery(this.element)).not.to.be.disabled;
   });
 
   it('renders an option for each view', function() {
-    expect(this.$('option').length).to.equal(4);
-    expect(this.$('option:first').text()).to.equal('Charles');
-    expect(this.$('option:last').text()).to.equal('Nobody');
+    expect(jQuery('option').length).to.equal(4);
+    expect(jQuery('option:first').text()).to.equal('Charles');
+    expect(jQuery('option:last').text()).to.equal('Nobody');
   });
 
   it('marks the selected value', function() {
-    expect(this.$('option:eq(1)')).to.be.selected;
+    expect(jQuery('option:eq(1)')).to.be.selected;
   });
 
   describe('choosing the last option', function() {
@@ -67,7 +67,7 @@ describe('XSelect: Single Selection', function() {
       this.controller.set('it', this.controller.get('charles'));
     });
     it('updates the selected option', function() {
-      expect(this.$('option:first')).to.be.selected;
+      expect(jQuery('option:first')).to.be.selected;
     });
   });
 
@@ -76,13 +76,13 @@ describe('XSelect: Single Selection', function() {
       this.controller.set('isDisabled', true);
     });
     it('disables the select box', function() {
-      expect(this.$()).not.to.be.enabled;
+      expect(jQuery(this.element)).not.to.be.enabled;
     });
   });
 
   describe("when no option is selected", function() {
     beforeEach(function() {
-      this.$().prop('selectedIndex', 4).trigger('change');
+      jQuery(this.element).prop('selectedIndex', 4).trigger('change');
     });
     it("has no value", function() {
       expect(this.controller.get('it')).to.equal(null);

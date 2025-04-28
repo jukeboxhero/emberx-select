@@ -1,7 +1,7 @@
 /*global expect, getComponentById */
 import { run } from '@ember/runloop';
 
-import $ from 'jquery';
+import jQuery from 'jquery';
 import startApp from '../helpers/start-app';
 import {
   beforeEach,
@@ -37,8 +37,8 @@ describe('XSelect: Multiple Selection', function() {
   });
 
   it('marks all selected values', function() {
-    expect(this.$('option:eq(1)')).to.be.selected;
-    expect(this.$('option:eq(2)')).to.be.selected;
+    expect(jQuery('option:eq(1)')).to.be.selected;
+    expect(jQuery('option:eq(2)')).to.be.selected;
   });
 
   describe('choosing the last option', function() {
@@ -57,14 +57,14 @@ describe('XSelect: Multiple Selection', function() {
       this.controller.set('selections', [this.controller.get('charles'), this.controller.get('stanley')]);
     });
     it('updates the selected option', function() {
-      expect(this.$('option:first')).to.be.selected;
-      expect(this.$('option:eq(2)')).to.be.selected;
+      expect(jQuery('option:first')).to.be.selected;
+      expect(jQuery('option:eq(2)')).to.be.selected;
     });
   });
 
   describe("when no option is selected", function() {
     beforeEach(function() {
-      this.$().prop('selectedIndex', 3).trigger('change');
+      jQuery(this.element).prop('selectedIndex', 3).trigger('change');
     });
 
     it("has the empty array as a value", function() {

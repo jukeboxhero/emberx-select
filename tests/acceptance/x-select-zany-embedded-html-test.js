@@ -2,7 +2,7 @@
 
 import { run } from '@ember/runloop';
 
-import $ from 'jquery';
+import jQuery from 'jquery';
 import startApp from '../helpers/start-app';
 import {
   beforeEach,
@@ -20,7 +20,7 @@ describe('XSelect: Embedded HTML', function() {
     visit("test-bed/zany-embedded-html");
   });
   beforeEach(function() {
-    let el = $('select');
+    let el = jQuery('select');
     this.component = getComponentById(el.attr('id'));
     this.$ = function() {
       return this.component.$.apply(this.component, arguments);
@@ -29,7 +29,7 @@ describe('XSelect: Embedded HTML', function() {
   });
 
   it("renders", function() {
-    expect(this.$()).to.exist;
+    expect(jQuery(this.element)).to.exist;
   });
 
   afterEach(function() {

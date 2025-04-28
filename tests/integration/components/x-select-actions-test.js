@@ -4,6 +4,7 @@ import { setupComponentTest } from 'ember-mocha';
 import { beforeEach, describe, it } from 'mocha';
 import { select } from 'dummy/tests/helpers/x-select';
 import hbs from 'htmlbars-inline-precompile';
+import jQuery from 'jquery';
 import sinon from 'sinon';
 
 describe('Integration: XSelectActionsComponent', function() {
@@ -77,7 +78,7 @@ describe('Integration: XSelectActionsComponent', function() {
       `);
         Ember.warn = sinon.spy();
 
-        select(this.$(), 'Hello');
+        select(jQuery(this.element), 'Hello');
       });
 
       it("sends a warning in the console", function() {
